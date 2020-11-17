@@ -4,6 +4,7 @@ package com.lambdaschool.bwafricanmarket.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name = "items")
@@ -68,5 +69,10 @@ public class Item extends Auditable{
 
     public void setMarket(Market market) {
         this.market = market;
+    }
+
+    @Override
+    public Collection<Object> getmarkets() {
+        return null;
     }
 }

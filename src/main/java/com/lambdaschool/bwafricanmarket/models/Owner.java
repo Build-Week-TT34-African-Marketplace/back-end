@@ -3,6 +3,7 @@ package com.lambdaschool.bwafricanmarket.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,6 +16,7 @@ public class Owner extends Auditable{
     private long ownerid;
     private String fname;
     private String lname;
+    public String getLname;
 
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("owner")
@@ -59,5 +61,10 @@ public class Owner extends Auditable{
 
     public void setOwns(Set<Own> owns) {
         this.owns = owns;
+    }
+
+    @Override
+    public Collection<Object> getmarkets() {
+        return null;
     }
 }

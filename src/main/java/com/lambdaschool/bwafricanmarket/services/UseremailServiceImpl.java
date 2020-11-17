@@ -1,5 +1,6 @@
 package com.lambdaschool.bwafricanmarket.services;
 
+import com.lambdaschool.bwafricanmarket.exceptions.ResourceNotFoundException;
 import com.lambdaschool.bwafricanmarket.models.User;
 import com.lambdaschool.bwafricanmarket.models.Useremail;
 import com.lambdaschool.bwafricanmarket.repositories.UseremailRepository;

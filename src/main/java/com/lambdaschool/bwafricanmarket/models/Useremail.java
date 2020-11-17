@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.util.Collection;
 
 @Entity
 @Table(name = "useremails")
@@ -30,6 +31,10 @@ public class Useremail extends Auditable{
         this.user = user;
     }
 
+    public Useremail(User newUser, String useremail) {
+
+    }
+
     public long getUseremailid() {
         return useremailid;
     }
@@ -52,5 +57,10 @@ public class Useremail extends Auditable{
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Override
+    public Collection<Object> getmarkets() {
+        return null;
     }
 }

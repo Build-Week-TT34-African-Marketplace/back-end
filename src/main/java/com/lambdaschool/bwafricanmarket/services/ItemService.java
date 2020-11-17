@@ -3,6 +3,7 @@ package com.lambdaschool.bwafricanmarket.services;
 import com.lambdaschool.bwafricanmarket.models.Item;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.validation.Valid;
 import java.util.List;
 
 public interface ItemService {

@@ -1,5 +1,7 @@
 package com.lambdaschool.bwafricanmarket.services;
 
+import com.lambdaschool.bwafricanmarket.exceptions.ResourceFoundException;
+import com.lambdaschool.bwafricanmarket.exceptions.ResourceNotFoundException;
 import com.lambdaschool.bwafricanmarket.models.Section;
 import com.lambdaschool.bwafricanmarket.repositories.SectionRepository;
 import org.springframework.beans.factory.annotation.Autowired;

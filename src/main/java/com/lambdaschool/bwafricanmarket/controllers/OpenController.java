@@ -34,7 +34,7 @@ public class OpenController {
     @Autowired
     private RoleService roleService;
 
-    @PostMapping(value = "/createnewuser", consumes = {"application/json"}, produces = {"application/json"})
+    @PostMapping(value = "/register", consumes = {"application/json"}, produces = {"application/json"})
     public ResponseEntity<?> addSelf(HttpServletRequest httpServletRequest, @Valid @RequestBody UserMinimum newminuser) throws URISyntaxException {
         User newuser = new User();
         newuser.setUsername(newminuser.getUsername());

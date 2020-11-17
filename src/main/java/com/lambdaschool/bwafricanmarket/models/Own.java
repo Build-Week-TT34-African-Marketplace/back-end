@@ -3,6 +3,7 @@ package com.lambdaschool.bwafricanmarket.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Table(name = "own")
@@ -55,5 +56,10 @@ public class Own extends Auditable{
         Own that = (Own) obj;
         return ((owner == null) ? 0 : owner.getOwnerid()) == ((that.owner == null) ? 0 : that.owner.getOwnerid()) &&
                 ((market == null) ? 0 : market.getMarketid()) == ((that.market == null) ? 0 : that.market.getMarketid());
+    }
+
+    @Override
+    public Collection<Object> getmarkets() {
+        return null;
     }
 }

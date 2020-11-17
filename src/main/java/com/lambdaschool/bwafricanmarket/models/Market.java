@@ -3,6 +3,7 @@ package com.lambdaschool.bwafricanmarket.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -77,5 +78,10 @@ public class Market extends Auditable{
 
     public void setOwns(Set<Own> owns) {
         this.owns = owns;
+    }
+
+    @Override
+    public Collection<Object> getmarkets() {
+        return null;
     }
 }

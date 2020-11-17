@@ -23,7 +23,7 @@ public class ItemController {
     ItemService itemService;
 
     @GetMapping(value = "/items", produces = {"application/json"})
-    public ResponseEntity<?> listAllBooks(HttpServletRequest request){
+    public ResponseEntity<?> listAllItems(HttpServletRequest request){
         List<Item> myItems = itemService.findAll();
         return new ResponseEntity<>(myItems, HttpStatus.OK);
     }
@@ -44,7 +44,7 @@ public class ItemController {
         return new ResponseEntity<>(null, responseHeaders, HttpStatus.CREATED);
     }
 
-    @PutMapping(value = "/item/{itemid", consumes = "appliation/json")
+    @PutMapping(value = "/item/{itemId}", consumes = "appliation/json")
     public ResponseEntity<?> updateFullItem(@Valid @RequestBody Item updateItem, @PathVariable long itemid){
         updateItem.setItemid(itemid);
         itemService.save(updateItem);

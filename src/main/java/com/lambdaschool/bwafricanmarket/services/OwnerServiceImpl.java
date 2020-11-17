@@ -1,5 +1,7 @@
 package com.lambdaschool.bwafricanmarket.services;
 
+import com.lambdaschool.bwafricanmarket.exceptions.ResourceFoundException;
+import com.lambdaschool.bwafricanmarket.exceptions.ResourceNotFoundException;
 import com.lambdaschool.bwafricanmarket.models.Owner;
 import com.lambdaschool.bwafricanmarket.repositories.OwnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +25,7 @@ public class OwnerServiceImpl implements OwnerService{
 
     @Override
     public Owner findOwnerById(long id){
-        return ownerrespos.findAllById(id).orElseThrow(()-> new ResourceNotFoundException("Owner with id " + id + " Not Found!"));
+        return (Owner) ownerrespos.findAllById(id).orElseThrow(()-> new ResourceNotFoundException("Owner with id " + id + " Not Found!"));
     }
     @Transactional
     @Override
@@ -60,5 +62,11 @@ public class OwnerServiceImpl implements OwnerService{
         if(owner.getLname() != null){
             currentOwner.setLname(owner.getLname);
         }
+        return currentOwner;
+    }
+
+    @Override
+    public void deleteAll() {
+
     }
 }

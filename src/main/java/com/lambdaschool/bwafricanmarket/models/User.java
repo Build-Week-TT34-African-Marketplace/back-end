@@ -8,10 +8,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "users")
@@ -110,5 +107,10 @@ public class User extends Auditable {
             rtnList.add(new SimpleGrantedAuthority(myRole));
         }
         return rtnList;
+    }
+
+    @Override
+    public Collection<Object> getmarkets() {
+        return null;
     }
 }

@@ -1,5 +1,6 @@
 package com.lambdaschool.bwafricanmarket.services;
 
+import com.lambdaschool.bwafricanmarket.exceptions.ResourceNotFoundException;
 import com.lambdaschool.bwafricanmarket.models.Role;
 import com.lambdaschool.bwafricanmarket.models.User;
 import com.lambdaschool.bwafricanmarket.models.UserRoles;
@@ -19,7 +20,7 @@ public class UserServiceImpl implements UserService{
     private UserRepository userrepos;
     @Autowired
     private RoleService roleService;
-    public User findUserById(long id) throws ResourceNotFoundException{
+    public User findUserById(long id) throws ResourceNotFoundException {
         return userrepos.findById(id).orElseThrow(()-> new ResourceNotFoundException("User id"+id+"not found"));
     }
     @Override
