@@ -1,13 +1,28 @@
 package com.lambdaschool.bwafricanmarket;
 
+import org.hibernate.cfg.Environment;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
+@EnableJpaAuditing
 @SpringBootApplication
 public class BwafricanmarketApplication {
-
+    @Autowired
+    private static Environment env;
+    private static boolean stop = false;
+    private static void checkEnvironmentVariable(String envvar){
+        if (System.getenv(envvar) == null){
+            stop = true;
+        }
+    }
     public static void main(String[] args) {
-        SpringApplication.run(BwafricanmarketApplication.class, args);
+        checkEnvironmentVariable("OAUTHCLIENTID");
+        checkEnvironmentVariable("OAUTHCLIENTSECRET");
+        if (!stop) {
+            SpringApplication.run(BwafricanmarketApplication.class, args);
+        }
     }
 
 }
