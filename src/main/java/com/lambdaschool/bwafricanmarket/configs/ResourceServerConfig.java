@@ -30,6 +30,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                         "/register")
                 .permitAll()
                 .antMatchers("/users/**",
+                        "/user/**",
                         "/useremails/**",
                         "/roles/**",
                         "/market/**",
